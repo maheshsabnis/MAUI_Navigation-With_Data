@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiApp.Departments"
+             Title="Departments">
+    <VerticalStackLayout>
+        <Label 
+            Text="List Of Departments"
+            FontSize="Header"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ListView x:Name="lstDepartments"  
+                   VerticalScrollBarVisibility="Always"
+                  HorizontalScrollBarVisibility="Always"
+                  ItemsSource="{Binding DepartmentsList}"
+                 ItemSelected="lstDepartments_ItemSelected"
+                   HeightRequest="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding DeptNo}"  WidthRequest="200"/>
+                             <Label Text="{Binding DeptName}"  WidthRequest="200"/>
+                             
+                        </StackLayout>
+                          
+                          
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
